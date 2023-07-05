@@ -1,6 +1,8 @@
 package com.crucial.featurama.model.treatment;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.UUID;
@@ -20,6 +22,7 @@ public class Override {
     @Id
     private UUID overrideId;
     private String customerId;
+    @Enumerated(EnumType.STRING)
     private Treatment treatment;
     private String weblabName;
 

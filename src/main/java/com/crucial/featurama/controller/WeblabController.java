@@ -3,6 +3,7 @@ package com.crucial.featurama.controller;
 import com.crucial.featurama.model.Weblab;
 import com.crucial.featurama.model.WeblabCreateRequest;
 import com.crucial.featurama.model.WeblabEditRequest;
+import com.crucial.featurama.model.treatment.Override;
 import com.crucial.featurama.service.WeblabService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -37,21 +38,19 @@ public class WeblabController {
         return ResponseEntity.ok(weblabService.getWeblab(weblabName));
     }
 
-    @PostMapping("/override")
+    @PostMapping("/overrides")
     public ResponseEntity createOverride(@RequestBody Override request) {
         weblabService.createOverride(request);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/override/{weblabName}")
+    @GetMapping("/overrides/{weblabName}")
     public ResponseEntity<List<Override>> getOverrides(@PathVariable String weblabName) {
         return ResponseEntity.ok(weblabService.getOverrides(weblabName));
     }
 
     // @PostMapping("/allocate-treatment")
     // public ResponseEntity allocateTreatment(@RequestBody )
-
-
 
 }
 
