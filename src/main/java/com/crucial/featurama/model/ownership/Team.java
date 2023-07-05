@@ -1,5 +1,6 @@
 package com.crucial.featurama.model.ownership;
 
+import com.crucial.featurama.user.User;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -23,8 +24,8 @@ public class Team {
 
     @Id
     private String teamName;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "teamName")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "associatedTeam")
     private List<User> teamMembers;
+
 
 }
