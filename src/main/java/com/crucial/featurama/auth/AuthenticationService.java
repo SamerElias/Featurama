@@ -1,6 +1,7 @@
 package com.crucial.featurama.auth;
 
 import com.crucial.featurama.config.JwtService;
+import com.crucial.featurama.exception.UserExistsException;
 import com.crucial.featurama.token.Token;
 import com.crucial.featurama.token.TokenRepository;
 import com.crucial.featurama.token.TokenType;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
-  private final UserRepository repository;
+  private final UserRepository userRepository;
   private final TokenRepository tokenRepository;
   private final PasswordEncoder passwordEncoder;
   private final JwtService jwtService;
@@ -28,7 +29,10 @@ public class AuthenticationService {
         .password(passwordEncoder.encode(request.getPassword()))
         .role(Role.USER)
         .build();
-    var savedUser = repository.save(user);
+    if(userRepository.findByEmail(request.getEmail()).isPresent()) {
+      throw new UserExistsException("User already exists");
+    }
+    var savedUser = userRepository.save(user);
     var jwtToken = jwtService.generateToken(user);
     saveUserToken(savedUser, jwtToken);
     return AuthenticationResponse.builder()
@@ -43,7 +47,7 @@ public class AuthenticationService {
             request.getPassword()
         )
     );
-    var user = repository.findByEmail(request.getEmail())
+    var user = userRepository.findByEmail(request.getEmail())
         .orElseThrow();
     var jwtToken = jwtService.generateToken(user);
     revokeAllUserTokens(user);

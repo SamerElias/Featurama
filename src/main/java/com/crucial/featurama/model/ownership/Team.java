@@ -27,5 +27,4 @@ public class Team {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "associatedTeam")
     private List<User> teamMembers;
 
-
 }
