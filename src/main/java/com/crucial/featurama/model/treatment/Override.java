@@ -24,6 +24,6 @@ public class Override {
     private String customerId;
     @Enumerated(EnumType.STRING)
     private Treatment treatment;
-    private String weblabName;
+    private String experimentName;
 
 }

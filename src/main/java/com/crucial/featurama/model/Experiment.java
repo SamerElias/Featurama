@@ -20,19 +20,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "weblab")
-public class Weblab {
+@Table(name = "experiment")
+public class Experiment {
 
     @Id
-    private String weblabName;
+    private String experimentName;
     private String description;
     private String owningTeam;
     private String owningUser;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "weblabName")
+    @JoinColumn(name = "experimentName")
     private List<ProdAllocation> prodProdAllocations;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "weblabName")
+    @JoinColumn(name = "experimentName")
     private List<DevAllocation> devAllocations;
 
 }

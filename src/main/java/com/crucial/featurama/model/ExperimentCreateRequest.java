@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class WeblabEditRequest {
+public class ExperimentCreateRequest {
 
+    private String experimentName;
     private String description;
     private List<String> impactedAreas;
     private String owningTeam;
