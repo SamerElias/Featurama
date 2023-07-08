@@ -51,13 +51,21 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.11.5</version> <!-- use the latest version here -->
         </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-jackson</artifactId>
-            <version>0.11.5</version>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.11.5</version> <!-- use the latest version here -->
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId> <!-- this is needed to use JSON serialization -->
+            <version>0.11.5</version> <!-- use the latest version here -->
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 

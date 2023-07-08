@@ -25,7 +25,8 @@ public class ExperimentController {
 
     @PostMapping("/create")
     public ResponseEntity<Experiment> createExperiment(@RequestBody ExperimentCreateRequest request) {
-        return ResponseEntity.ok(experimentService.createExperiment(request));
+        experimentService.createExperiment(request);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{experimentName}")
