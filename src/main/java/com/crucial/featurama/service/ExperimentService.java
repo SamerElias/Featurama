@@ -4,7 +4,7 @@ import com.crucial.featurama.exception.ExperimentNotFoundException;
 import com.crucial.featurama.model.Experiment;
 import com.crucial.featurama.model.ExperimentCreateRequest;
 import com.crucial.featurama.model.ExperimentEditRequest;
-import com.crucial.featurama.model.treatment.Override;
+import com.crucial.featurama.model.Override;
 import java.util.ArrayList;
 import java.util.List;
 

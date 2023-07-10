@@ -1,7 +1,5 @@
 package com.crucial.featurama.model;
 
-import com.crucial.featurama.model.treatment.DevAllocation;
-import com.crucial.featurama.model.treatment.ProdAllocation;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

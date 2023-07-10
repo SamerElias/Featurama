@@ -1,6 +1,5 @@
 package com.crucial.featurama.user;
 
-import com.crucial.featurama.model.ownership.Team;
 import com.crucial.featurama.token.Token;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -32,10 +31,6 @@ public class User implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role role;
-
-    @ManyToOne
-    @JoinColumn(name="teamName", referencedColumnName="teamName")
-    private Team associatedTeam;
 
     @OneToMany(mappedBy = "user")
     private List<Token> tokens;

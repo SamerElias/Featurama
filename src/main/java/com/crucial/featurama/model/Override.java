@@ -1,4 +1,4 @@
-package com.crucial.featurama.model.treatment;
+package com.crucial.featurama.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

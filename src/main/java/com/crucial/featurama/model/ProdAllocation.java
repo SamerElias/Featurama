@@ -1,4 +1,4 @@
-package com.crucial.featurama.model.treatment;
+package com.crucial.featurama.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "dev_allocation")
-public class DevAllocation {
+@Table(name = "prod_allocation")
+public class ProdAllocation {
 
     @Id
     private UUID allocationId;
@@ -25,4 +25,3 @@ public class DevAllocation {
     private Short treatmentWeight;
 
 }
-

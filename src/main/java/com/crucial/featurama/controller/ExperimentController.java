@@ -3,7 +3,7 @@ package com.crucial.featurama.controller;
 import com.crucial.featurama.model.Experiment;
 import com.crucial.featurama.model.ExperimentCreateRequest;
 import com.crucial.featurama.model.ExperimentEditRequest;
-import com.crucial.featurama.model.treatment.Override;
+import com.crucial.featurama.model.Override;
 import com.crucial.featurama.service.ExperimentService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
